@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VoteMe </title>
+    <link href='{%static "img/v.png" %}'  rel="icon">
+     <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/bootstrap.css"  %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/all.min.css"  %}'>
+</head>
+<body class="bg-light container-fluid">
+     
+
+    <!-- Barre de menue et ses Options  -->
+    <nav class="navbar navbar-expand-lg  bg-body-tertiary mb-sm-1 navbar-light" style="background-color: #e6e6e6;" >
+        <div class="container-fluid" data-bs-theme="dark">
+          <a class="navbar-brand" href="{% url 'home' %}" class="rounded mx-auto d-block" width="50" alt="VoteMe"> Home   </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars"> </i>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-5 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'add_product' %}">Publier</a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="{% url 'deconnexion' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Se deconnecter
+                </a>
+              </li>
+
+
+
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Salut {{ user.username }} </a>
+              </li>
+            </ul>
+            <form class="d-flex" >
+              <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+          </div>
+        </div>
+      </nav>
+
+
+
+
+      <!-- Contenu de la page et les différents Boxs  -->
+
+
+
+<div class="row">
+    <div class="col-sm-3 "> 
+                <h5 class="card-title">Vendez en ligne et Proposé vos services en toute sécurité </h5>
+                <p class="card-text">Vous avez besoin d'organiser une vente dans votre structure en toute sécurité et transparence ?... optez pour le changement.</p>
+              </div>
+            </div>
+            <div class="card border-info mt-3 col-sm-5"> 
+              <a href="{% url 'add_product' %}" class="btn btn-success">Ajouter un Sercice / Article </a>
+    
+            </div>
+
+    </div>
+    <div class="col">
+        
+        <br>
+        <h3>
+          <hr>
+            Avec vous ,
+          <hr>
+        </h3>
+        <div class="card border-info">
+            <div class="card-body">
+            
+            <h5 class="card-title">Nos membres(s)</h5>
+              <p class="card-text">
+                <table class="table">
+                    <thead>
+    <tr>
+      <th scope="col" style="text-align: center;">Email</th>
+      <th scope="col">Nom(s)</th>
+      <th scope="col">Statut</th>
+      <th scope="col" >Action / Bio</th>
+    </tr>
+  </thead>
+
+                  {%for data in donnees%}
+                   
+  <tbody>
+    <tr>
+      <th style="text-align: center;">
+  {% if data.email %}
+    <a class="card-img-top" alt="Email de l'utilisateur" style="max-width: 100px;"> {{data.email}}</a>
+  {% else %}
+    Pas de Email disponible
+  {% endif %}
+</th>
+
+      <td>{{data.prenom}}</td>
+      <td>Approuvé</td>
+      {% if data.statut == "administrateur" %}
+      <td ><a href="{% url 'abonner' data.id %}" class="btn btn-primary"> Désapprouver </a> </td>
+      {% else %}
+      <td width="280px">{%if data.name%} {{data.bio }} {%else%} <a href="" class="btn btn-primary"> Suivre </a> {%endif %}</td>
+      {% endif %}
+    </tr>
+    <tr>
+             {%endfor%}
+   
+  </tbody>
+</table> 
+           
+
+              
+
+          </div>
+          
+          
+          
+
+    </div>
+
+
+ </div>
+</div>
+
+      <!-- Zone réservé au Copyright -->
+    <div class="container d-md-flex py-3 md-auto col-sm-4" style="text-align: center;">
+        <center> &copy; VoteMe  || Tout droit réservé  || Copyright 2023. </center>
+    </div>
+
+
+
+
+
+
+
+
+</body>
+</html>
+<script src="js/bootstrap.js"></script>

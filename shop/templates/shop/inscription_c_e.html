@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="fr">
+<head>
+    <link href='{%static "utilisateurs/img/v.png" %}'  rel="icon">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Connexion et inscription </title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/bootstrap.css"  %}'>
+    <link rel='stylesheet' type='text/css' media='screen' href='{% static "css/all.min.css"  %}'>
+   
+</head>
+<body class="bg-light">
+    <div class="container ">
+        <div class="row mt-5">
+            <div class="col-lg-4 bg-white m-auto rounded-top">
+                <h2 class="text-center"> Inscription<sup><i style="font-size: 15px;">Participant</i></sup></h2>
+                <p class="text-center text-muted lead"> Simple et Rapide  <br> Sweet-Market-Center </p>
+
+
+                    <form method="post" action="{% url 'user_register_simple' %}">
+                        {% csrf_token %}
+                        
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Nom" name="nom">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                            <input type="text" class="form-control" placeholder="Prénom" name="prenom">
+                        </div>
+                        <div class="form-group" hidden>
+                                <input type="text" name="structure" value="{{ structure_value }}">
+                            </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-envelope"></i></span>
+                            <input type="email" class="form-control" placeholder="Email" name="email">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                            <input type="password" class="form-control" placeholder="Mot de passe" name="mot_de_passe">
+                        </div>
+                         <div class="d-grid">
+                         <button type="submit" class="btn btn-primary">S’inscrire</button>
+                        <p class="text-center text-muted mt-3">
+                            En cliquant sur S’inscrire, vous acceptez nos <a href="#">  Conditions générales</a>, notre <a href=""> Politique de confidentialité </a> et notre <a href="#">  Politique d’utilisation</a> des cookies. 
+                        </p>
+                        <p class="text-center">
+                             Avez vous déjà un compte ?<a href='{% url "login"  %} '> Connexion </a>
+                        </p>
+                    </div>
+                    </form>
+
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html> 
+<script src='{% static "js/bootstrap.js"  %}'></script>

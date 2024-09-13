@@ -1,0 +1,404 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Sweet market center</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <!-- <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon"> -->
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+</head>
+
+<body class="index-page">
+
+  <header id="header" class="header sticky-top">
+
+    <div class="topbar d-flex align-items-center dark-background">
+      <div class="container d-flex justify-content-center justify-content-md-between">
+        <div class="contact-info d-flex align-items-center">
+          <i class="bi bi-envelope d-flex align-items-center"><a href="mailto:contact@example.com">Ens @UY1.com</a></i>
+          <i class="bi bi-phone d-flex align-items-center ms-4"><span>+237  6 </span></i>
+        </div>
+        <div class="social-links d-none d-md-flex align-items-center">
+          <a href="#" class="twitter"><i class="bi bi-twitter-x"></i></a>
+          <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+          <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
+          <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div><!-- End Top Bar -->
+    <div class="branding d-flex align-items-center">
+
+      <div class="container position-relative d-flex align-items-center justify-content-between">
+        <a href="{% url 'acc' %}" class="logo d-flex align-items-center">
+          <!-- Décommentez la ligne ci-dessous si vous souhaitez également utiliser un logo image -->
+          <!-- <img src="{% static 'assets/img/logo.png' %}" alt=""> -->
+          <h1 class="sitename">Sweet Market Center</h1>
+        </a>
+    
+        <nav id="navmenu" class="navmenu">
+          <ul>
+            <li><a href="#hero" class="active">Accueil</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li class="dropdown"><a href="#"><span>Actions</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+              <ul>
+                <li><a href="{%url 'profil' %}">Profil</a></li>
+                <li class="dropdown"><a href="#"><span>Connexion</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+                  <ul>
+                    <li><a href="{%url 'login' %}">Connexion</a></li>
+                    <li><a href="{%url 'deconnexion' %}">deconnexion</a></li>
+                  </ul>
+                </li>
+                <li><a href="{%url 'home' %}">Plomberie</a></li>
+                <li><a href="{%url 'home1' %}">Construction</a></li>
+                <li><a href="{%url 'home2' %}">Ventes </a></li>
+              </ul>
+            </li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+        </nav>
+    
+      </div>
+    
+    </div>
+    
+    </header>
+    
+    <main class="main">
+    
+    <!-- Section Hero -->
+    <section id="hero" class="hero section dark-background">
+    
+      <img src="{% static 'assets/img/hero-bg.jpg' %}" alt="" data-aos="fade-in">
+    
+      <div class="container position-relative">
+    
+        <div class="welcome position-relative" data-aos="fade-down" data-aos-delay="100">
+          <h2>Bienvenue sur Sweet Market Center</h2>
+          <p>Nous vous proposons une variété de services.</p>
+        </div><!-- Fin de Bienvenue -->
+    
+        <div class="content row gy-4">
+          <div class="col-lg-4 d-flex align-items-stretch">
+            <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
+              <h3>Plomberie</h3>
+              <p>
+                Avez-vous des problèmes de plomberie ? Fuites, obstructions, installation de nouvelles canalisations ? Ne cherchez plus, notre équipe de plombiers qualifiés est là pour vous aider !
+              </p>
+              <div class="text-center">
+                <a href="{% url 'home' %}" class="more-btn"><span>Voir plus</span> <i class="bi bi-chevron-right"></i></a>
+              </div>
+            </div>
+          </div><!-- Fin de Why Box -->
+    
+          <div class="col-lg-8 d-flex align-items-stretch">
+            <div class="d-flex flex-column justify-content-center">
+              <div class="row gy-4">
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="why-box" data-aos="zoom-out" data-aos-delay="300">
+                    <i class="bi bi-clipboard-data"></i>
+                    
+                    <h4>Construction</h4>
+                     <p>Vous avez un projet de construction, de rénovation ou de réparation ? Faites confiance aux experts de la maçonnerie pour donner vie à vos idées !</p>
+                     <a href="{%url 'home1'%}" class="more-btn"><span>Voir plus</span> <i class="bi bi-chevron-right"></i></a>
+                    </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="400">
+                    <i class="bi bi-gem"></i>
+                    <h4>Ventes d'appareils</h4>
+                    <p>Conçu pour les passionnés de haute technologie, ce modèle rassemble le meilleur de l'innovation pour vous offrir une expérience d'utilisation inégalée. Doté d'un design élégant et épuré, ce téléphone allie puissance, fluidité et fonctionnalités avancées pour répondre à tous vos besoins.</p>
+                    <a href="{%url 'home2'%}" class="more-btn"><span>Voir plus</span> <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div><!-- End Icon Box -->
+
+                <div class="col-xl-4 d-flex align-items-stretch">
+                  <div class="icon-box" data-aos="zoom-out" data-aos-delay="500">
+                    <i class="bi bi-inboxes"></i>
+                    <h4>Location de voiture</h4>
+                    <p>Avec notre large flotte de voitures récentes et bien entretenues, nous proposons la solution de mobilité idéale pour tous vos besoins. Particuliers ou professionnels, vous trouverez forcément le véhicule qui vous convient, du citadin compact à la familiale en passant par le SUV.</p>
+                    <a href="{%url 'home3'%}" class="more-btn"><span>Voir plus</span> <i class="bi bi-chevron-right"></i></a>
+                  </div>
+                </div><!-- End Icon Box -->
+
+              </div>
+            </div>
+          </div>
+        </div><!-- End  Content-->
+
+      </div>
+
+    </section><!-- /Hero Section -->
+
+<!-- Section À Propos -->
+<section id="about" class="about section light-background">
+
+  <div class="container">
+
+    <div class="row gy-4">
+
+      <div class="col-lg-5 position-relative align-self-start" data-aos="fade-up" data-aos-delay="200">
+        <img src="{% static 'assets/img/about.jpg' %}" class="img-fluid" alt="">
+        <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox pulsating-play-btn"></a>
+      </div>
+
+      <div class="col-lg-7 content" data-aos="fade-up" data-aos-delay="100">
+        <h3>À Propos de Nous</h3>
+        <p>
+          Nous croyons fermement à l'importance de la collaboration et de l'écoute active. Chaque membre de notre équipe apporte une perspective unique et des compétences spécialisées, ce qui nous permet de travailler efficacement ensemble pour concevoir et développer des applications robustes et intuitives. Notre processus de développement est agile et adaptable, ce qui nous permet de nous ajuster rapidement aux changements et aux défis rencontrés en cours de route.  </p>
+        <ul>
+          <li>
+            <i class="bi bi-diagram-3"></i>
+            <div>
+              <h5>Excellence Technique :</h5>
+              <p>Utilisant des technologies de pointe pour garantir des solutions robustes et évolutives.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-fullscreen-exit"></i>
+            <div>
+              <h5>Innovation Continue</h5>
+              <p> afin de proposer à nos clients des solutions modernes et adaptées à leurs besoins évolutifs.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-broadcast"></i>
+            <div>
+              <h5>Collaboration Active</h5>
+              <p>En travaillant étroitement avec nos clients et au sein même de notre équipe, nous nous assurons que chaque projet bénéficie d'une perspective diversifiée et d'une expertise collective.</p>
+            </div>
+          </li>
+          <li>
+            <i class="bi bi-buildings"></i>
+            <div>
+              <h5><del></del>Satisfaction Client </h5>
+              <p>Tout en assurant un soutien continu et une relation de confiance à long terme.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+</section><!-- /Section À Propos -->
+
+        </div>
+
+      </div>
+
+    </section>
+    <!-- Contact Section -->
+    <section id="contact" class="contact section">
+
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Contact</h2>
+        <p>UY1</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+        <div class="row gy-4">
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="200">
+              <i class="icon bi bi-geo-alt flex-shrink-0"></i>
+              <div>
+                <h3>Address</h3>
+                <p>237 Adam Street, YAOUNDE, YD 237</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="300">
+              <i class="icon bi bi-telephone flex-shrink-0"></i>
+              <div>
+                <h3>Call Us</h3>
+                <p>+237 -- -- --</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="400">
+              <i class="icon bi bi-envelope flex-shrink-0"></i>
+              <div>
+                <h3>Email Us</h3>
+                <p>enS@example.com</p>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+          <div class="col-md-6">
+            <div class="info-item d-flex align-items-center" data-aos="fade-up" data-aos-delay="500">
+              <i class="icon bi bi-share flex-shrink-0"></i>
+              <div>
+                <h3>Social Profiles</h3>
+                <div class="social-links">
+                  <a href="#"><i class="bi bi-twitter-x"></i></a>
+                  <a href="#"><i class="bi bi-facebook"></i></a>
+                  <a href="#"><i class="bi bi-instagram"></i></a>
+                  <a href="#"><i class="bi bi-skype"></i></a>
+                  <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+            </div>
+          </div><!-- End Info Item -->
+
+        </div>
+
+        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up" data-aos-delay="600">
+          <div class="row gy-4">
+
+            <div class="col-md-6">
+              <input type="text" name="name" class="form-control" placeholder="Your Name" required="">
+            </div>
+
+            <div class="col-md-6 ">
+              <input type="email" class="form-control" name="email" placeholder="Your Email" required="">
+            </div>
+
+            <div class="col-md-12">
+              <input type="text" class="form-control" name="subject" placeholder="Subject" required="">
+            </div>
+
+            <div class="col-md-12">
+              <textarea class="form-control" name="message" rows="6" placeholder="Message" required=""></textarea>
+            </div>
+
+            <div class="col-md-12 text-center">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">Your message has been sent. Thank you!</div>
+
+              <button type="submit">Send Message</button>
+            </div>
+
+          </div>
+        </form><!-- End Contact Form -->
+
+      </div>
+
+    </section><!-- /Contact Section -->
+
+  </main>
+  <footer id="footer" class="footer light-background">
+
+    <div class="container footer-top">
+      <div class="row gy-4">
+        <div class="col-lg-4 col-md-6 footer-about">
+          <a href="{% url 'acc' %}" class="logo d-flex align-items-center">
+            <span class="sitename">Sweet Market Center</span>
+          </a>
+          <div class="footer-contact pt-3">
+            <p>237 rue 76</p>
+            <p>YAOUNDE, CE 237</p>
+            <p class="mt-3"><strong>Téléphone :</strong> <span>+237 682 482 065</span></p>
+            <p><strong>Email :</strong> <span>UY1@example.com</span></p>
+          </div>
+          <div class="social-links d-flex mt-4">
+            <a href=""><i class="bi bi-twitter-x"></i></a>
+            <a href=""><i class="bi bi-facebook"></i></a>
+            <a href=""><i class="bi bi-instagram"></i></a>
+            <a href=""><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+  
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Liens Utiles</h4>
+          <ul>
+            <li><a href="#">Accueil</a></li>
+            <li><a href="#">À propos de nous</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Conditions d'utilisation</a></li>
+            <li><a href="#">Politique de confidentialité</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-2 col-md-3 footer-links">
+          <h4>Nos Services</h4>
+          <ul>
+            <li><a href="#">Design Web</a></li>
+            <li><a href="#">Développement Web</a></li>
+            <li><a href="#">Gestion de Produit</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li><a href="#">Design Graphique</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-lg-4 col-md-12 footer-newsletter">
+          <h4>Notre Newsletter</h4>
+          <p>Abonnez-vous à notre newsletter pour recevoir les dernières nouvelles sur nos produits et services !</p>
+          <form action="#" method="post" class="php-email-form">
+            <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="S'abonner"></div>
+            <div class="loading">Chargement</div>
+            <div class="error-message"></div>
+            <div class="sent-message">Votre demande d'abonnement a été envoyée. Merci !</div>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  
+    <div class="container copyright text-center mt-4">
+      <p>© <span>Droits d'auteur</span> <strong class="px-1 sitename">Sweet Market Center</strong> <span>Tous droits réservés</span></p>
+      <div class="credits">
+        <!-- Tous les liens dans le pied de page doivent rester intacts. -->
+        <!-- Vous pouvez supprimer les liens uniquement si vous avez acheté la version pro. -->
+        <!-- Informations de licence : https://bootstrapmade.com/license/ -->
+        <!-- Achetez la version pro avec un formulaire de contact PHP/AJAX fonctionnel : [buy-url] -->
+        Conçu par <a href="#">Nous 47</a>
+      </div>
+    </div>
+  
+  </footer>
+  
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>
